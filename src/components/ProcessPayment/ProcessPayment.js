@@ -9,12 +9,12 @@ import SplitForm from './SplitForm';
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe('pk_test_51IeFjPFXFvekkyYxj17rrQV74JfvyIIJOrN4E5m6fL7mShQicjb9u8SN1hCuf7zMrGj9zeFoqLZYsLNMuL9Fs1uc007XnfPRnm');
 
-const ProcessPayment = () => {
+const ProcessPayment = ({ handlePayment }) => {
 
     return (
         <div>
             <Elements stripe={stripePromise}>
-                <SimpleCardForm></SimpleCardForm>
+                <SimpleCardForm handlePayment={handlePayment}></SimpleCardForm>
             </Elements>
 
         </div>
